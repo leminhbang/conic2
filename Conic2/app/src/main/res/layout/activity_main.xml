@@ -96,6 +96,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:text="1.0"
                     android:id="@+id/edtBendingLength"
                     android:inputType="number|numberDecimal"
                     android:gravity="center"
@@ -112,17 +113,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Width of Die"
+                    android:text="v"
+                    android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/number_picker_v"
                     android:layout_weight="2"
                     android:layout_width="0dp"
-                    app:np_width="100dp"
-                    app:np_min="4"
-                    app:np_max="10"
+                    app:np_width="150dp"
                     app:np_orientation="horizontal"
                     android:layout_height="wrap_content"/>
             </TableRow>
@@ -133,11 +134,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Side length"
+                    android:text="b"
+                    android:gravity="center_horizontal"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/txtResultB"
+                    android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -148,16 +152,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Press force"
+                    android:text="ir"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/txtResultIR"
+                    android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
             </TableRow>
-
+            <TableRow
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="F"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtResultF"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -165,10 +189,12 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Result 3"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -181,10 +207,12 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Result 4"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -199,7 +227,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#d68c46"
-
+        android:layout_margin="0dp"
+        android:padding="0dp"
         app:itemIconTint="@drawable/nav_item_color"
         app:itemTextColor="@drawable/nav_item_color"
         app:menu="@menu/menu_bottom"/>

@@ -3,10 +3,10 @@
 
     <string-array name="array_material">
         <item>Mild steel 450 N/mm</item>
-        <item>Stainless steel 700 N/mm2</item>
-        <item>Aluminium 350 N/mm2</item>
+        <item>Stainless steel 700 N/mm</item>
+        <item>Aluminium 350 N/mm</item>
     </string-array>
-    <string-array name="array_sheet_thickness">
+    <string-array name="array_sheet_thickness_mild_steel">
         <item>0.5 mm</item>
         <item>0.6 mm</item>
         <item>0.8 mm</item>
@@ -33,6 +33,32 @@
         <item>22.0 mm</item>
         <item>25.0 mm</item>
         <item>30.0 mm</item>
+    </string-array>
+    <string-array name="array_sheet_thickness_stainless_steel">
+        <item>0.5 mm</item>
+        <item>0.6 mm</item>
+        <item>0.7 mm</item>
+        <item>0.8 mm</item>
+        <item>9.0 mm</item>
+        <item>1.0 mm</item>
+        <item>1.2 mm</item>
+        <item>1.5 mm</item>
+        <item>2.0 mm</item>
+        <item>2.5 mm</item>
+        <item>3.0 mm</item>
+        <item>4.0 mm</item>
+        <item>5.0 mm</item>
+        <item>6.0 mm</item>
+        <item>8.0 mm</item>
+        <item>10.0 mm</item>
+        <item>12.0 mm</item>
+        <item>15.0 mm</item>
+        <item>20.0 mm</item>
+        <item>25.0 mm</item>
+        <item>30.0 mm</item>
+    </string-array>
+    <string-array name="array_sheet_thickness_aluminium">
+        <item>0.5 mm</item>
     </string-array>
     <string-array name="array_bending_angle">
         <item>30</item>

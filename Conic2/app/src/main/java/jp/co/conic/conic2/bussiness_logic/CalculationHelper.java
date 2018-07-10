@@ -73,10 +73,10 @@ public class CalculationHelper {
 
     public float get_Temp1(float v) {
         if(this.material == 0) {
-            return this.mild_steel.getGeneralObject(v).get_F() * this.bending_length;
+            return (this.mild_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
         if(material == 1) {
-            return this.stainless_steel.getGeneralObject(v).get_F() * this.bending_length;
+            return (this.stainless_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
         return -1;
     }
