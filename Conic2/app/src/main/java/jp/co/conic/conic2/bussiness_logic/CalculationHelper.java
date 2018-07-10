@@ -10,6 +10,7 @@ public class CalculationHelper {
     private float bending_angle;
 
     MildSteel mild_steel;
+    StainlessSteel stainless_steel;
 
     public CalculationHelper(int material,
                              float thickness,
@@ -24,11 +25,18 @@ public class CalculationHelper {
         if(material == 0) {
             mild_steel = new MildSteel(thickness);
         }
+
+        if(material == 1) {
+            stainless_steel = new StainlessSteel(thickness);
+        }
     }
 
     public List<String> get_v_list() {
         if(this.material == 0) {
-            return mild_steel.get_v_OfMildSteel();
+            return mild_steel.get_v();
+        }
+        if(material == 1) {
+            return stainless_steel.get_v();
         }
         return null;
     }
@@ -37,12 +45,18 @@ public class CalculationHelper {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_b();
         }
+        if(material == 1) {
+            return this.stainless_steel.getGeneralObject(v).get_b();
+        }
         return -1;
     }
 
     public float get_ir(float v) {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_ir();
+        }
+        if(material == 1) {
+            return this.stainless_steel.getGeneralObject(v).get_ir();
         }
         return -1;
     }
@@ -51,12 +65,18 @@ public class CalculationHelper {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_F();
         }
+        if(material == 1) {
+            return this.stainless_steel.getGeneralObject(v).get_F();
+        }
         return -1;
     }
 
     public float get_Temp1(float v) {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_F() * this.bending_length;
+        }
+        if(material == 1) {
+            return this.stainless_steel.getGeneralObject(v).get_F() * this.bending_length;
         }
         return -1;
     }

@@ -104,15 +104,6 @@ public class MildSteel {
             mMildSteel.put((float) 2.6, lGeneralObject);
         }
 
-        if(t == 2.6) {
-            lGeneralObject.add(new GeneralObject(16, (float) 11, (float) 2.6,280));
-            lGeneralObject.add(new GeneralObject(18, (float) 13.5, (float) 3,250));
-            lGeneralObject.add(new GeneralObject(20, (float) 14, (float) 3.3,220));
-            lGeneralObject.add(new GeneralObject(25, (float) 17.5, (float) 4,180));
-            lGeneralObject.add(new GeneralObject(32, (float) 22, (float) 5,140));
-            mMildSteel.put((float) 2.6, lGeneralObject);
-        }
-
         if(t == 3.0) {
             lGeneralObject.add(new GeneralObject(18, (float) 13.5, (float) 3,340));
             lGeneralObject.add(new GeneralObject(20, (float) 14, (float) 3.3,300));
@@ -238,12 +229,12 @@ public class MildSteel {
         }
     }
 
-    public List<String> get_v_OfMildSteel() {
-        List<String> l_vList = new ArrayList<String>();
+    public List<String> get_v() {
+        List<String> v_list = new ArrayList<String>();
         for(int i = 0; i < lGeneralObject.size(); i++) {
-            l_vList.add(Float.toString(lGeneralObject.get(i).get_v()));
+            v_list.add(Float.toString(lGeneralObject.get(i).get_v()));
         }
-        return l_vList;
+        return v_list;
     }
 
     public GeneralObject getGeneralObject(float v) {
