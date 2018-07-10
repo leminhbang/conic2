@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,12 +16,10 @@ import android.widget.TextView;
 
 import com.shawnlin.numberpicker.NumberPicker;
 
-import java.util.List;
-
 import jp.co.conic.conic2.R;
 import jp.co.conic.conic2.bussiness_logic.CalculationHelper;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener, View.OnFocusChangeListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener, TextWatcher {
 
     AppCompatSpinner spinnerMaterial, spinnerSheetThickness,
         spinnerBendingAngle;
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigationView.setOnNavigationItemSelectedListener(this);
 
         edtBendingLength = findViewById(R.id.edtBendingLength);
-        edtBendingLength.setOnFocusChangeListener(this);
+        edtBendingLength.addTextChangedListener(this);
         numpicV = findViewById(R.id.number_picker_v);
         numpicV.setOnValueChangedListener(this);
 
@@ -167,33 +167,52 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     private void showVList(CalculationHelper cal) {
-        List<String> v_list = cal.get_v_list();
+        //List<String> v_list = cal.get_v_list();
+        String[] data = cal.get_v_list().clone();
+        /*data = (String[]) (v_list.
+                toArray(new String[v_list.size()]));*/
+        int l = data.length;
+        numpicV.setDisplayedValues(null);
+        numpicV.setMaxValue(l - 1);
+        numpicV.setMinValue(0);
+        numpicV.setWrapSelectorWheel(false);
 
-        String[] data = (String[]) (v_list.
-                toArray(new String[v_list.size()]));
-        numpicV = null;
-        numpicV = findViewById(R.id.number_picker_v);
-        numpicV.setMaxValue(data.length);
-        numpicV.setMinValue(1);
+        int max = numpicV.getMaxValue();
+        int min = numpicV.getMinValue();
+        if (max - min + 1 == l)
         numpicV.setDisplayedValues(data);
-        numpicV.setValue(1);
-        showResults(Float.parseFloat(v_list.get(0)));
+        numpicV.setValue(0);
+        showResults(Float.parseFloat(data[0]));
     }
 
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         String[] s = numpicV.getDisplayedValues();
-        String val = s[newVal - 1];
+        String val = s[newVal];
         showResults(Float.parseFloat(val));
     }
 
-    @Override
-    public void onFocusChange(View view, boolean b) {
-
-    }
     private void showResults(float v) {
         txtB.setText(String.valueOf(cal.get_b(v)));
         txtF.setText(String.valueOf(cal.get_F(v)));
         txtIR.setText(String.valueOf(cal.get_ir(v)));
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        if (charSequence.length() != 0) {
+            onSelectChange();
+        }
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
     }
 }

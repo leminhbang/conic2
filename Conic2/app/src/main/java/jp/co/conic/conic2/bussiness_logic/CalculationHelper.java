@@ -1,7 +1,5 @@
 package jp.co.conic.conic2.bussiness_logic;
 
-import java.util.List;
-
 public class CalculationHelper {
 
     private int material;
@@ -31,7 +29,7 @@ public class CalculationHelper {
         }
     }
 
-    public List<String> get_v_list() {
+    public String[] get_v_list() {
         if(this.material == 0) {
             return mild_steel.get_v();
         }

@@ -229,10 +229,15 @@ public class MildSteel {
         }
     }
 
-    public List<String> get_v() {
-        List<String> v_list = new ArrayList<String>();
+    public String[] get_v() {
+        /*List<String> v_list = new ArrayList<>();
         for(int i = 0; i < lGeneralObject.size(); i++) {
-            v_list.add(Float.toString(lGeneralObject.get(i).get_v()));
+            v_list.add(String.valueOf(lGeneralObject.get(i).get_v()));
+        }
+        return v_list;*/
+        String[] v_list = new String[lGeneralObject.size()];
+        for(int i = 0; i < lGeneralObject.size(); i++) {
+            v_list[i] = String.valueOf(lGeneralObject.get(i).get_v());
         }
         return v_list;
     }
