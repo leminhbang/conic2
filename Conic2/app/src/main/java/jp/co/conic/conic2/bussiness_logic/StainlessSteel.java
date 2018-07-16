@@ -189,10 +189,6 @@ public class StainlessSteel {
     }
 
     public String[] get_v() {
-        /*List<String> v_list = new ArrayList<String>();
-        for(int i = 0; i < lGeneralObject.size(); i++) {
-            v_list.add(Float.toString(lGeneralObject.get(i).get_v()));
-        }*/
         String[] v_list = new String[lGeneralObject.size()];
         for(int i = 0; i < lGeneralObject.size(); i++) {
             v_list[i] = String.valueOf(lGeneralObject.get(i).get_v());

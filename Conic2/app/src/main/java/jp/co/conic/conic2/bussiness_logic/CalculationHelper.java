@@ -33,7 +33,7 @@ public class CalculationHelper {
         if(this.material == 0) {
             return mild_steel.get_v();
         }
-        if(material == 1) {
+        if(this.material == 1) {
             return stainless_steel.get_v();
         }
         return null;
@@ -43,7 +43,7 @@ public class CalculationHelper {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_b();
         }
-        if(material == 1) {
+        if(this.material == 1) {
             return this.stainless_steel.getGeneralObject(v).get_b();
         }
         return -1;
@@ -53,7 +53,7 @@ public class CalculationHelper {
         if(this.material == 0) {
             return this.mild_steel.getGeneralObject(v).get_ir();
         }
-        if(material == 1) {
+        if(this.material == 1) {
             return this.stainless_steel.getGeneralObject(v).get_ir();
         }
         return -1;
@@ -61,10 +61,10 @@ public class CalculationHelper {
 
     public float get_F(float v) {
         if(this.material == 0) {
-            return this.mild_steel.getGeneralObject(v).get_F();
+            return (this.mild_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
-        if(material == 1) {
-            return this.stainless_steel.getGeneralObject(v).get_F();
+        if(this.material == 1) {
+            return (this.stainless_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
         return -1;
     }
@@ -73,7 +73,7 @@ public class CalculationHelper {
         if(this.material == 0) {
             return (this.mild_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
-        if(material == 1) {
+        if(this.material == 1) {
             return (this.stainless_steel.getGeneralObject(v).get_F() * this.bending_length)/1000.0f;
         }
         return -1;

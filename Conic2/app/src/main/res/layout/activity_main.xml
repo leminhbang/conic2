@@ -4,17 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".activity.MainActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/logo_conic_2" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo_conic_2" />
+
+        </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,19 +40,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="Material" />
+                    android:fontFamily="@font/kurale"
+                    android:text="Material"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Sheet thickness" />
+                    android:text="Sheet thickness"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"/>
             </TableRow>
 
             <TableRow
@@ -56,15 +72,24 @@
                     android:id="@+id/spinnerMaterial"
                     android:spinnerMode="dialog"
                     android:layout_weight="3"
+                    android:layout_marginRight="10dp"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:background="#F26824"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kurale"/>
 
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/spinnerSheetThickness"
                     android:spinnerMode="dialog"
                     android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:background="#F26824"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kurale"/>
             </TableRow>
 
             <TableRow
@@ -77,12 +102,18 @@
                     android:text="Bending angle"
                     android:layout_weight="3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:text="Bending length"
                     android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"/>
             </TableRow>
 
             <TableRow
@@ -90,21 +121,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/spinnerBendingAngle"
-                    android:spinnerMode="dialog"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:background="#F26824"
+                    android:fontFamily="@font/kurale"
+                    android:spinnerMode="dialog"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
                 <EditText
-                    android:text="1.0"
                     android:id="@+id/edtBendingLength"
-                    android:inputType="number|numberDecimal"
-                    android:gravity="center"
-                    android:focusable="auto"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#F26824"
+                    android:focusable="auto"
+                    android:fontFamily="@font/kurale"
+                    android:gravity="left"
+                    android:inputType="number|numberDecimal"
+                    android:paddingLeft="10dp"
+                    android:text="1.0"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
             </TableRow>
 
             <TableRow
@@ -112,26 +155,36 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
+                android:background="#FF9800"
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="v"
+                    android:textSize="20dp"
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/kurale"/>
                 <com.shawnlin.numberpicker.NumberPicker
                     android:id="@+id/number_picker_v"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     app:np_width="150dp"
+                    android:textSize="20dp"
+                    android:background="#FF9800"
+                    android:textColor="#FFFFFF"
+                    app:np_dividerDistance="70dp"
+                    android:fontFamily="@font/kurale"
                     app:np_orientation="horizontal"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="35dp"/>
             </TableRow>
 
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="#FFA726"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -139,17 +192,24 @@
                     android:gravity="center_horizontal"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:id="@+id/txtResultB"
                     android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="#FFB74D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -157,17 +217,24 @@
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:id="@+id/txtResultIR"
                     android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="#FFCC80"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -175,47 +242,67 @@
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:id="@+id/txtResultF"
                     android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/kurale"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="#FFE0B2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Result 3"
+                    android:text="Result 1"
                     android:gravity="center"
                     android:layout_weight="1"
+                    android:textSize="20dp"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:gravity="center"
                     android:layout_weight="2"
                     android:layout_width="0dp"
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/kurale"
                     android:layout_height="wrap_content"/>
             </TableRow>
 
             <TableRow
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="#FFF3E0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Result 4"
+                    android:text="Result 2"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/kurale"/>
                 <TextView
                     android:gravity="center"
                     android:layout_weight="2"
+                    android:textSize="20dp"
                     android:layout_width="0dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/kurale"
                     android:layout_height="wrap_content"/>
             </TableRow>
         </LinearLayout>
@@ -227,7 +314,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#d68c46"
+        android:background="#F26824"
         android:layout_margin="0dp"
         android:padding="0dp"
         app:itemIconTint="@drawable/nav_item_color"

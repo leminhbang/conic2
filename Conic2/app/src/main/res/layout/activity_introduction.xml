@@ -12,8 +12,8 @@
     tools:context=".IntroductionActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:id="@+id/imgSplashScreen"
         android:src="@drawable/logo_conic_2"
         android:background="@android:color/transparent"/>
